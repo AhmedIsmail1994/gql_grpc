@@ -1,0 +1,21 @@
+version: "3.8"
+
+
+services:
+
+  grpc:
+    build:
+      context: .
+    ports:
+      - "50052:50052"
+    command: python3 -m svc.servicer
+    volumes:
+      - ./:/src
+
+  gql:
+    build:
+      context: .
+    ports:
+      - "8082:80"
+    volumes:
+      - ./:/src

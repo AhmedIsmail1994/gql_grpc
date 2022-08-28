@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tsvc.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t29\n\nHelloWorld\x12+\n\x08SayHello\x12\r.HelloRequest\x1a\x0e.HelloResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tsvc.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2>\n\x11HelloWorldService\x12)\n\x08SayHello\x12\r.HelloRequest\x1a\x0e.HelloResponseb\x06proto3')
 
 
 
@@ -34,7 +34,7 @@ HelloResponse = _reflection.GeneratedProtocolMessageType('HelloResponse', (_mess
   })
 _sym_db.RegisterMessage(HelloResponse)
 
-_HELLOWORLD = DESCRIPTOR.services_by_name['HelloWorld']
+_HELLOWORLDSERVICE = DESCRIPTOR.services_by_name['HelloWorldService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -42,6 +42,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _HELLOREQUEST._serialized_end=41
   _HELLORESPONSE._serialized_start=43
   _HELLORESPONSE._serialized_end=75
-  _HELLOWORLD._serialized_start=77
-  _HELLOWORLD._serialized_end=134
+  _HELLOWORLDSERVICE._serialized_start=77
+  _HELLOWORLDSERVICE._serialized_end=139
 # @@protoc_insertion_point(module_scope)

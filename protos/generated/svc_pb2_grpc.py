@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import svc_pb2 as svc__pb2
+import protos.generated.svc_pb2 as svc__pb2
 
 
-class HelloWorldStub(object):
+class HelloWorldServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,13 +15,13 @@ class HelloWorldStub(object):
             channel: A grpc.Channel.
         """
         self.SayHello = channel.unary_unary(
-                '/HelloWorld/SayHello',
+                '/HelloWorldService/SayHello',
                 request_serializer=svc__pb2.HelloRequest.SerializeToString,
                 response_deserializer=svc__pb2.HelloResponse.FromString,
                 )
 
 
-class HelloWorldServicer(object):
+class HelloWorldServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SayHello(self, request, context):
@@ -31,7 +31,7 @@ class HelloWorldServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_HelloWorldServicer_to_server(servicer, server):
+def add_HelloWorldServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SayHello': grpc.unary_unary_rpc_method_handler(
                     servicer.SayHello,
@@ -40,12 +40,12 @@ def add_HelloWorldServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'HelloWorld', rpc_method_handlers)
+            'HelloWorldService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class HelloWorld(object):
+class HelloWorldService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -59,7 +59,7 @@ class HelloWorld(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/HelloWorld/SayHello',
+        return grpc.experimental.unary_unary(request, target, '/HelloWorldService/SayHello',
             svc__pb2.HelloRequest.SerializeToString,
             svc__pb2.HelloResponse.FromString,
             options, channel_credentials,
