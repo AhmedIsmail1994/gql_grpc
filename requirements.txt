@@ -1,0 +1,5 @@
+ariadne==0.14.1
+grpcio~=1.46
+grpcio-reflection~=1.46
+grpcio-tools~=1.46
+uvicorn==0.18.2
