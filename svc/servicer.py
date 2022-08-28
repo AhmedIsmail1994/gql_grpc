@@ -4,13 +4,13 @@ from concurrent import futures
 from svc.hello_world_sv import HelloWorldSv
 from svc.setup_server import setup_server
 
+
 class Server:
 
     @staticmethod
     def run():
         server = setup_server([HelloWorldSv()])
         server.start()
-        print("after start")
         server.wait_for_termination()
 
 

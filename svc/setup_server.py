@@ -27,6 +27,5 @@ def setup_server(svcs: List[ServerInfo], port='[::]:50052', max_workers=10):
     reflection.enable_server_reflection(service_names, server)
 
     server.add_insecure_port(port)
-    print("ay 7aga 2")
-    
+
     return server

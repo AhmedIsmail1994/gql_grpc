@@ -10,9 +10,8 @@ class HelloWorldSv(HelloWorldService):
 
     def service_name(self):
         return DESCRIPTOR.services_by_name["HelloWorldService"].full_name
-        
+
     def SayHello(self, request, context):
-        print("inside hello")
         return HelloResponse(
             message=f'Hello World, ${request.name}'
         )
