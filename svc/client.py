@@ -14,12 +14,14 @@
 """The Python implementation of the GRPC helloworld.Greeter client."""
 
 from __future__ import print_function
+import email
 
 import logging
 import grpc
 
-from protos.generated.svc_pb2 import HelloRequest
+from protos.generated.svc_pb2 import HelloRequest, UserInfoRequest
 from protos.generated.svc_pb2_grpc import HelloWorldServiceStub
+
 
 def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
@@ -28,9 +30,10 @@ def run():
     with grpc.insecure_channel('localhost:50052', options=(('grpc.enable_http_proxy', 0),)) as channel:
         stub = HelloWorldServiceStub(channel)
         response = stub.SayHello(HelloRequest(name='you'))
-        
+        response2 = stub.GetUserInfo(UserInfoRequest(email="test@nutrien.com"))
+
     print("Greeter client received: " + response.message)
-    
+    print("User Info received: " + response2.first_name)
 
 
 if __name__ == '__main__':

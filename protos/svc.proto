@@ -10,6 +10,18 @@ message HelloResponse{
     string message = 1;
 }
 
+message UserInfoRequest{
+    string email = 1;
+}
+
+message UserInfoResponse{
+    string first_name = 1;
+    string last_name = 2;
+    string country = 3;
+    string phone = 4;
+}
+
 service HelloWorldService{
     rpc SayHello(HelloRequest) returns(HelloResponse);
+    rpc GetUserInfo(UserInfoRequest) returns(UserInfoResponse);
 }

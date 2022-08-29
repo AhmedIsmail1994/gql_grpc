@@ -1,7 +1,15 @@
 type Query{
     HelloWorld(input: String!): HelloWorldResponse!
+    UserInfo(email: String!): UserInfoResponse!
 }
 
 type HelloWorldResponse{
     message: String!
+}
+
+type UserInfoResponse{
+    first_name: String!
+    country: String!
+    phone: String!
+    last_name: String!
 }

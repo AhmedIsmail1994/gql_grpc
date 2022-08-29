@@ -14,12 +14,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tsvc.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t2>\n\x11HelloWorldService\x12)\n\x08SayHello\x12\r.HelloRequest\x1a\x0e.HelloResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tsvc.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\" \n\rHelloResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\" \n\x0fUserInfoRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"Y\n\x10UserInfoResponse\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x11\n\tlast_name\x18\x02 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x03 \x01(\t\x12\r\n\x05phone\x18\x04 \x01(\t2r\n\x11HelloWorldService\x12)\n\x08SayHello\x12\r.HelloRequest\x1a\x0e.HelloResponse\x12\x32\n\x0bGetUserInfo\x12\x10.UserInfoRequest\x1a\x11.UserInfoResponseb\x06proto3')
 
 
 
 _HELLOREQUEST = DESCRIPTOR.message_types_by_name['HelloRequest']
 _HELLORESPONSE = DESCRIPTOR.message_types_by_name['HelloResponse']
+_USERINFOREQUEST = DESCRIPTOR.message_types_by_name['UserInfoRequest']
+_USERINFORESPONSE = DESCRIPTOR.message_types_by_name['UserInfoResponse']
 HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), {
   'DESCRIPTOR' : _HELLOREQUEST,
   '__module__' : 'svc_pb2'
@@ -34,6 +36,20 @@ HelloResponse = _reflection.GeneratedProtocolMessageType('HelloResponse', (_mess
   })
 _sym_db.RegisterMessage(HelloResponse)
 
+UserInfoRequest = _reflection.GeneratedProtocolMessageType('UserInfoRequest', (_message.Message,), {
+  'DESCRIPTOR' : _USERINFOREQUEST,
+  '__module__' : 'svc_pb2'
+  # @@protoc_insertion_point(class_scope:UserInfoRequest)
+  })
+_sym_db.RegisterMessage(UserInfoRequest)
+
+UserInfoResponse = _reflection.GeneratedProtocolMessageType('UserInfoResponse', (_message.Message,), {
+  'DESCRIPTOR' : _USERINFORESPONSE,
+  '__module__' : 'svc_pb2'
+  # @@protoc_insertion_point(class_scope:UserInfoResponse)
+  })
+_sym_db.RegisterMessage(UserInfoResponse)
+
 _HELLOWORLDSERVICE = DESCRIPTOR.services_by_name['HelloWorldService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -42,6 +58,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _HELLOREQUEST._serialized_end=41
   _HELLORESPONSE._serialized_start=43
   _HELLORESPONSE._serialized_end=75
-  _HELLOWORLDSERVICE._serialized_start=77
-  _HELLOWORLDSERVICE._serialized_end=139
+  _USERINFOREQUEST._serialized_start=77
+  _USERINFOREQUEST._serialized_end=109
+  _USERINFORESPONSE._serialized_start=111
+  _USERINFORESPONSE._serialized_end=200
+  _HELLOWORLDSERVICE._serialized_start=202
+  _HELLOWORLDSERVICE._serialized_end=316
 # @@protoc_insertion_point(module_scope)
