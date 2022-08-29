@@ -15,7 +15,7 @@ query = QueryType()
 
 @query.field("HelloWorld")
 def hello_world(self, info, input):
-    with grpc.insecure_channel('host.docker.internal:50052', options=(('grpc.enable_http_proxy', 0),)) as channel:
+    with grpc.insecure_channel('host.docker.internal:50052') as channel:
         stub = HelloWorldServiceStub(channel)
         response = stub.SayHello(HelloRequest(name=input))
     return {
@@ -25,7 +25,7 @@ def hello_world(self, info, input):
 
 @query.field("UserInfo")
 def user_info(self, info, email):
-    with grpc.insecure_channel('host.docker.internal:50052', options=(('grpc.enable_http_proxy', 0),)) as channel:
+    with grpc.insecure_channel('host.docker.internal:50052') as channel:
         stub = HelloWorldServiceStub(channel)
         response = stub.GetUserInfo(UserInfoRequest(email=email))
     return {
