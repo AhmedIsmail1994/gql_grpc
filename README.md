@@ -1,7 +1,6 @@
 # gql_grpc
 
-## steps to run app:
-<br />
+### run app:
 docker-compose up
 <br />
 
