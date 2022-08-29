@@ -36,6 +36,12 @@ class HelloWorldSv(HelloWorldService):
             "last_name": "ismail",
             "country": "EG",
             "phone": "015015015015"
+        }, {
+            "email": "test@nutrien.com",
+            "first_name": "test",
+            "last_name": "test",
+            "country": "US",
+            "phone": "+13324558954"
         }]
         user = [x for x in users if x['email'] == request.email][0]
         return UserInfoResponse(
